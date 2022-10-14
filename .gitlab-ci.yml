@@ -1,0 +1,44 @@
+image: maven:slim
+# Vaihda yllä olevan tilalle jokin seuraavista jos haluat Java-version 17/18/19
+# image: maven:3-openjdk-17-slim
+# image: maven:3-openjdk-18-slim
+# image: maven:3-eclipse-temurin-19
+
+variables:
+  # This will supress any download for dependencies and plugins or upload messages which would clutter the console log.
+  # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version"
+  # -DinstallAtEnd=true -DdeployAtEnd=true"
+
+# Cache downloaded dependencies and plugins between builds.
+# To keep cache across branches add ''
+cache:
+  key: "$CI_JOB_NAME"
+  paths:
+    - .m2/repository
+
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+pages:
+  stage: deploy
+  allow_failure: true
+  script:
+    - 'find src > public/report.txt'
+    - 'mvn clean test 2>&1 >> public/report.txt'
+    - 'mvn surefire-report:report'
+    - 'cp target/site/surefire-report.html public/'
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
