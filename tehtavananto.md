@@ -230,6 +230,8 @@ sijoittaa muuttujaan `elukat`? Miten määrittely tulisi
 korjata, jotta sijoitus onnistuisi? Näytä ratkaisu
 koodina ja selosta myös, miksi ratkaisu toimii.
 
+Huom! Edellä kuvatut koodit sijaitsevat myös paketissa `tehtava4ab`.
+
 **B)** Seuraava geneerinen metodi toteuttaa kahden listan yhdistämisen
 edellä kuvattujen eläinluokkien kontekstissa:
 
@@ -246,13 +248,15 @@ Hyödynnä luentomateriaalin [Osan 19 (Geneerisyys ja varianssi)](https://tech.u
 graafia selittämään, mitkä kaikki tyyppisignatuurit ovat
 yhteensopivia yhdistämisen tuloksena saadun listan kanssa.
 
+Huom! Edellä kuvatut koodit sijaitsevat myös paketissa `tehtava4ab`.
+
 **C)** Biologian laitoksen projekti on päätynyt kehittämään eläinten käyttäytymistä
 mallintavaa simulaattoria. Ohjelman toiminnassa ideana on, että eläimiä
 luokitella taksonien tapaiseen hierarkiaan (= ohjelman luokkahierarkia).
 Lisäksi eläimillä on yhteisiä läpileikkaavia piirteitä, joita haluttaisiin
 uudelleenkäyttää eri osissa hierarkiaa.
 
-Toteutukseen sisältyvät seuraavat paketissa `tehtava4` kuvatut luokat ja rajapinnat:
+Toteutukseen sisältyvät seuraavat paketissa `tehtava4c` kuvatut luokat ja rajapinnat:
 
 - `Eläin`: kaikkien eläinten abstrakti kantaluokka, osaa tulostaa nimensä
 - `Lentävä`: eläimet, jotka osaavat lentää

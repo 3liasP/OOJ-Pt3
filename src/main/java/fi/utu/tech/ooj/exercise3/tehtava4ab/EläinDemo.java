@@ -1,4 +1,4 @@
-package fi.utu.tech.ooj.exercise3.tehtava4a;
+package fi.utu.tech.ooj.exercise3.tehtava4ab;
 
 import java.util.ArrayList;
 

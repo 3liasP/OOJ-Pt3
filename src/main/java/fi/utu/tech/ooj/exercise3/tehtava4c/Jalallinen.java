@@ -1,4 +1,4 @@
-package fi.utu.tech.ooj.exercise3.tehtava4b;
+package fi.utu.tech.ooj.exercise3.tehtava4c;
 
 public interface Jalallinen {
     default int raajaMäärä() {
