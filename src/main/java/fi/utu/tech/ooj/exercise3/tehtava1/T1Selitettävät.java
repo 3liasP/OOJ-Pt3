@@ -15,7 +15,7 @@ public class T1Selitettävät {
  * ovat yksikäsitteisiä vain saman teoksen eri kappaleille, eri teosten teoskappaleilla voi olla sama numero.
  * Lisäksi kirjaa pidetään teoskappaleen kunnosta sekä muutamasta viimeisimmästä lainaajasta.
  */
-class Teoskappale {
+class Teoskappale implements Cloneable {
     enum Kuntoluokitus {HYVÄ, OK, HUONO}
 
     private Teos teos;
