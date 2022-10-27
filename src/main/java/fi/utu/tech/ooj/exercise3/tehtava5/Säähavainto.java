@@ -14,7 +14,28 @@ public class Säähavainto {
     private float pituusaste;
     private float leveysaste;
 
-    public Säähavainto(String aika,
+    public Säähavainto(int vuosi,
+                       int kuukausi,
+                       int päivä,
+                       int tunti,
+                       int minuutti,
+                       int sekunti,
+                       String paikka,
+                       float pituusaste,
+                       float leveysaste,
+                       float lämpotila,
+                       boolean sataako) {
+        this(
+                String.format("%04d/%02d/%02d %02d:%02d:%02d", vuosi, kuukausi, päivä, tunti, minuutti, sekunti),
+                paikka,
+                pituusaste,
+                leveysaste,
+                lämpotila,
+                sataako
+        );
+    }
+
+    private Säähavainto(String aika,
                        String paikka,
                        float pituusaste,
                        float leveysaste,
@@ -31,7 +52,7 @@ public class Säähavainto {
     @Override
     public String toString() {
         return String.format(
-                "Havainto %s (%.2f°N, %.2f°E) @ %s: lämpö %.2f°C, %s",
+                "Havainto %s (%.2f°N, %.2f°E) @ %s, lämpö %.2f°C, %s",
                 paikka,
                 pituusaste,
                 leveysaste,
@@ -52,9 +73,12 @@ public class Säähavainto {
         var päivä = new Random().nextInt(28) + 1;
         var kuukausi = new Random().nextInt(12) + 1;
         var vuosi = new Random().nextInt(100) + 1922;
+        var tunti = new Random().nextInt(24);
+        var minuutti = new Random().nextInt(60);
+        var sekunti = new Random().nextInt(60);
 
         return new Säähavainto(
-                String.format("%04d/%02d/%02d", vuosi, kuukausi, päivä),
+                vuosi, kuukausi, päivä, tunti, minuutti, sekunti,
                 Kunta.values()[new Random().nextInt(4)].name(),
                 new Random().nextFloat() * 360 - 180,
                 new Random().nextFloat() * 360 - 180,
