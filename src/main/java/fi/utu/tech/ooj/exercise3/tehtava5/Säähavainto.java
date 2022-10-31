@@ -89,7 +89,7 @@ public class Säähavainto {
                 new Random().nextBoolean()
         );
     }
-    // Että saamme arvoja vertailtavaksi.
+    // Jotta saamme arvoja vertailtavaksi.
     public String getAika() {
         return this.aika;
     }
@@ -100,7 +100,7 @@ public class Säähavainto {
         return leveysaste;
     }
 
-    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopoida.
+    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopioida.
     // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
     // Järjestää listan aikaleiman mukaan nousevaksi.
     public static ArrayList<Säähavainto> Luonnollinen(ArrayList<Säähavainto> shl) {
@@ -114,7 +114,7 @@ public class Säähavainto {
         return shl;
     }
 
-    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopoida.
+    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopioida.
     // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
     // Järjestää listan pituusasteen mukaan nousevaksi.
     // Jos pituusasteet sattumalta samat, järjestetään leveysasteen mukaan nousevaksi.
