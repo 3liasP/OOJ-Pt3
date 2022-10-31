@@ -1,5 +1,8 @@
 package fi.utu.tech.ooj.exercise3.tehtava5;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 // TODO: Toteuta tänne tehtävän 5 järjestykset ja lajitteludemo
@@ -86,4 +89,50 @@ public class Säähavainto {
                 new Random().nextBoolean()
         );
     }
+    // Että saamme arvoja vertailtavaksi.
+    public String getAika() {
+        return this.aika;
+    }
+    public float getPituusaste() {
+        return pituusaste;
+    }
+    public float getLeveysaste() {
+        return leveysaste;
+    }
+
+    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopoida.
+    // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
+    // Järjestää listan aikaleiman mukaan nousevaksi.
+    public static ArrayList<Säähavainto> Luonnollinen(ArrayList<Säähavainto> shl) {
+        Collections.sort(shl, new Comparator<Säähavainto>() {
+            @Override
+            public int compare(Säähavainto o1, Säähavainto o2) {
+                return o1.getAika().compareTo(o2.getAika());
+            }
+        });
+        Collections.sort(shl, Comparator.comparing(Säähavainto::getAika));
+        return shl;
+    }
+
+    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopoida.
+    // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
+    // Järjestää listan pituusasteen mukaan nousevaksi.
+    // Jos pituusasteet sattumalta samat, järjestetään leveysasteen mukaan nousevaksi.
+    public static ArrayList<Säähavainto> PituusLeveys(ArrayList<Säähavainto> shl) {
+        Collections.sort(shl, new Comparator<Säähavainto>() {
+            @Override
+            public int compare(Säähavainto o1, Säähavainto o2) {
+                int returnable = 0;
+                if((Float.compare(o1.getPituusaste(), o2.getPituusaste())) == 0) {
+                    returnable = Float.compare(o1.getLeveysaste(), o2.getLeveysaste());
+                } else {
+                    returnable = Float.compare(o1.getPituusaste(), o2.getPituusaste());
+                }
+                return returnable;
+            }
+        });
+        Collections.sort(shl, Comparator.comparing(Säähavainto::getPituusaste));
+        return shl;
+    }
+
 }
