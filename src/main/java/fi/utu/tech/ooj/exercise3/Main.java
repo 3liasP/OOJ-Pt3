@@ -18,11 +18,7 @@ public class Main {
 
 
         // TÄMÄ OSIO DEMONSTROI TEHTÄVÄÄ 5
-        Säähavainto sh = Säähavainto.keksi();
-        System.out.println(sh.toString()); // omaa kokeilua
-        System.out.println(sh.getAika()); // omaa kokeilua
-        
-        // Luodaan kymmenen säähavaintoa keksi() metodin avulla ja lisätään ne listaan
+         // Luodaan kymmenen säähavaintoa keksi() metodin avulla ja lisätään ne listaan
         ArrayList<Säähavainto> shl = new ArrayList<>();
         for(int i=0; i<10; i++) {
             Säähavainto shListaan = Säähavainto.keksi();

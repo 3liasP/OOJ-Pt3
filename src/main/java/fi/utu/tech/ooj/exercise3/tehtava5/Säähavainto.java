@@ -99,8 +99,9 @@ public class Säähavainto {
     public float getLeveysaste() {
         return leveysaste;
     }
-
-    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopioida.
+    
+    // TEHTÄVÄN 5A VASTAUS:
+    // Toimii nyt sivuvaikuttaen, voidaan mahdollista olisi myös uusi lista ja kopioida.
     // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
     // Järjestää listan aikaleiman mukaan nousevaksi.
     public static ArrayList<Säähavainto> Luonnollinen(ArrayList<Säähavainto> shl) {
@@ -114,7 +115,8 @@ public class Säähavainto {
         return shl;
     }
 
-    // Toimii nyt sivuvaikuttaen, voidaan luoda myös uusi lista ja kopioida.
+    // TEHTÄVÄN 5B VASTAUS:
+    // Toimii nyt sivuvaikuttaen, mahdollista olisi luoda myös uusi lista ja kopioida.
     // Tarkoituksena oli kuitenkin järjestää lista, joka parametriksi annetaan.
     // Järjestää listan pituusasteen mukaan nousevaksi.
     // Jos pituusasteet sattumalta samat, järjestetään leveysasteen mukaan nousevaksi.
